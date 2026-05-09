@@ -1,0 +1,20 @@
+name: GitHub Actions Quickstart
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print basic info
+        run: |
+          echo "Quickstart workflow is running."
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch ref: ${{ github.ref }}"
+          echo "Commit SHA: ${{ github.sha }}"
